@@ -39,7 +39,15 @@ function M.run_task(opts)
 				actions.close(prompt_bufnr)
 				local selection = action_state.get_selected_entry()
 				-- print(vim.inspect(selection))
-				vim.cmd('VimuxRunCommand \"xc ' .. selection[1] .. '\"')
+				-- vim.cmd('VimuxRunCommand \"xc ' .. selection[1] .. '\"')
+				local handle = io.popen('xc ' .. selection[1])
+				if (handle == nil) then
+					print('could not run task')
+					return
+				end
+				local result = handle:read("*a")
+				handle:close()
+				print(result)
 			end)
 			return true
 		end,
