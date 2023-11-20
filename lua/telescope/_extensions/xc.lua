@@ -8,7 +8,6 @@ local xc = require("xc")
 
 return telescope.register_extension {
 	config = function()
-
 	end,
 	exports = {
 		run_task = xc.run_task,
