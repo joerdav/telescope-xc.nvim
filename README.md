@@ -1,4 +1,4 @@
-# WIP: telescope-xc.nvim
+# telescope-xc.nvim
 
 This is an extension for the telescope neovim plugin. To run `xc` tasks using telescope.
 
@@ -17,7 +17,7 @@ Use [lazy.nvim](https://github.com/folke/lazy.nvim)
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
-            { "joerdav/telescope-xc.nvim" },
+            "joerdav/telescope-xc.nvim",
         },
         config = function()
             require("telescope").setup()

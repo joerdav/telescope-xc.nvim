@@ -38,16 +38,8 @@ function M.run_task(opts)
 			actions.select_default:replace(function()
 				actions.close(prompt_bufnr)
 				local selection = action_state.get_selected_entry()
-				-- print(vim.inspect(selection))
-				-- vim.cmd('VimuxRunCommand \"xc ' .. selection[1] .. '\"')
-				local handle = io.popen('xc ' .. selection[1])
-				if (handle == nil) then
-					print('could not run task')
-					return
-				end
-				local result = handle:read("*a")
-				handle:close()
-				print(result)
+				local xc_task_command = '!xc ' .. selection[1]
+				vim.api.nvim_exec2(xc_task_command, {})
 			end)
 			return true
 		end,
