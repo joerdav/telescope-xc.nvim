@@ -1,6 +1,6 @@
 # telescope-xc.nvim
 
-![til](./examples/demo.gif)
+![til](./demo.gif)
 
 [![xc compatible](https://xcfile.dev/badge.svg)](https://xcfile.dev)
 
