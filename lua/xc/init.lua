@@ -38,6 +38,9 @@ function M.run_task(opts)
 			actions.select_default:replace(function()
 				actions.close(prompt_bufnr)
 				local selection = action_state.get_selected_entry()
+				if selection == nil then
+					return
+				end
 				local xc_task_command = '!xc ' .. selection[1]
 				vim.api.nvim_exec2(xc_task_command, {})
 			end)
